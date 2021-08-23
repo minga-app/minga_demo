@@ -11,7 +11,7 @@ class LogoutTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text('Juan Nadie'),
+      title: Text('Juan Pérez'),
       subtitle: Text(MingaLocalizations.of(context).logged_in),
       trailing: Tooltip(
           message: MingaLocalizations.of(context).log_out,
@@ -30,7 +30,7 @@ class LogoutTile extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            _buildLabel('Juan Nadie'),
+            _buildLabel('Juan Pérez'),
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
