@@ -5,6 +5,7 @@ import 'package:minga_demo/theme.dart';
 import 'package:minga_demo/widgets/app_bar.dart';
 import 'package:minga_demo/widgets/card_body.dart';
 import 'package:minga_demo/widgets/location_selector.dart';
+import 'package:minga_demo/widgets/responsive_body.dart';
 import 'package:minga_shared/voluntary_work/voluntary_work_model.dart';
 
 import '../main.dart';
@@ -181,136 +182,157 @@ class _CategoryView extends StatefulWidget {
 }
 
 class _CategoryViewState extends State<_CategoryView> {
-  late TextEditingController _typeController;
+  TextEditingController _typeController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverPadding(
-          padding: EdgeInsets.all(16),
-          sliver: SliverGrid.extent(
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 16,
-            childAspectRatio: 1,
-            maxCrossAxisExtent: 150,
-            children: [
-              _CategoryCard(
-                color: primary200,
-                icon: Icons.directions_bike,
-                label: MingaLocalizations.of(context).deliver,
-                onSelected: () => widget.onSelected(VoluntaryWorkType.delivery),
-              ),
-              _CategoryCard(
-                color: primary200,
-                icon: Icons.outdoor_grill,
-                label: MingaLocalizations.of(context).prep_food,
-                onSelected: () =>
-                    widget.onSelected(VoluntaryWorkType.prepareFood),
-              ),
-              _CategoryCard(
-                color: primary200,
-                icon: Icons.food_bank,
-                label: MingaLocalizations.of(context).serve_food,
-                onSelected: () =>
-                    widget.onSelected(VoluntaryWorkType.serveFood),
-              ),
-              _CategoryCard(
-                color: primary100,
-                icon: Icons.cleaning_services,
-                label: MingaLocalizations.of(context).cleaning,
-                onSelected: () => widget.onSelected(VoluntaryWorkType.clean),
-              ),
-              _CategoryCard(
-                color: primary100,
-                icon: Icons.construction,
-                label: MingaLocalizations.of(context).repair,
-                onSelected: () => widget.onSelected(VoluntaryWorkType.repair),
-              ),
-              _CategoryCard(
-                color: primary100,
-                icon: Icons.eco,
-                label: MingaLocalizations.of(context).garden,
-                onSelected: () =>
-                    widget.onSelected(VoluntaryWorkType.gardening),
-              ),
-              _CategoryCard(
-                color: primary100,
-                icon: Icons.assignment,
-                label: MingaLocalizations.of(context).coord,
-                onSelected: () =>
-                    widget.onSelected(VoluntaryWorkType.coordinate),
-              ),
-              _CategoryCard(
-                color: primary100,
-                icon: Icons.healing,
-                label: MingaLocalizations.of(context).health,
-                onSelected: () =>
-                    widget.onSelected(VoluntaryWorkType.healthcare),
-              ),
-              _CategoryCard(
-                color: primary100,
-                icon: Icons.school,
-                label: MingaLocalizations.of(context).teach,
-                onSelected: () => widget.onSelected(VoluntaryWorkType.teaching),
-              ),
-            ],
-          ),
+    return Align(
+      alignment: Alignment.topCenter,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 570,
+          minWidth: 300,
+          maxHeight: double.infinity,
         ),
-        SliverList(
-          delegate: SliverChildListDelegate([
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Card(
-                child: Column(
+        child: Padding(
+          padding: MediaQuery.of(context).size.width < 300
+              ? EdgeInsets.only(left: 8, right: 8)
+              : EdgeInsets.only(left: 16, right: 16),
+          child: CustomScrollView(
+            slivers: [
+              SliverPadding(
+                padding: EdgeInsets.all(16),
+                sliver: SliverGrid.extent(
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 1,
+                  maxCrossAxisExtent: 150,
                   children: [
-                    Form(
-                      key: _formKey,
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(top: 8, right: 16, left: 16),
-                        child: FormFieldSpacing(
-                          divided: false,
-                          child: TextFormField(
-                            controller: _typeController,
-                            validator: (val) => val!.length > 5
-                                ? null
-                                : MingaLocalizations.of(context).at_least_5,
-                          ),
-                          title: MingaLocalizations.of(context).alt_cat,
-                        ),
-                      ),
+                    _CategoryCard(
+                      color: primary200,
+                      icon: Icons.directions_bike,
+                      label: MingaLocalizations.of(context).deliver,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.delivery),
                     ),
-                    Divider(
-                      thickness: 1.5,
+                    _CategoryCard(
+                      color: primary200,
+                      icon: Icons.outdoor_grill,
+                      label: MingaLocalizations.of(context).prep_food,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.prepareFood),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8, bottom: 8),
-                      child: ButtonBar(
-                        children: [
-                          RaisedButton.icon(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                widget.onSelected(_typeController.text);
-                              }
-                            },
-                            icon: Icon(Icons.arrow_forward),
-                            label: Text(MingaLocalizations.of(context).proceed),
-                            elevation: 0,
-                            highlightElevation: 0,
-                            disabledElevation: 0,
-                          )
-                        ],
-                        buttonHeight: 48,
-                      ),
+                    _CategoryCard(
+                      color: primary200,
+                      icon: Icons.food_bank,
+                      label: MingaLocalizations.of(context).serve_food,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.serveFood),
+                    ),
+                    _CategoryCard(
+                      color: primary100,
+                      icon: Icons.cleaning_services,
+                      label: MingaLocalizations.of(context).cleaning,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.clean),
+                    ),
+                    _CategoryCard(
+                      color: primary100,
+                      icon: Icons.construction,
+                      label: MingaLocalizations.of(context).repair,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.repair),
+                    ),
+                    _CategoryCard(
+                      color: primary100,
+                      icon: Icons.eco,
+                      label: MingaLocalizations.of(context).garden,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.gardening),
+                    ),
+                    _CategoryCard(
+                      color: primary100,
+                      icon: Icons.assignment,
+                      label: MingaLocalizations.of(context).coord,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.coordinate),
+                    ),
+                    _CategoryCard(
+                      color: primary100,
+                      icon: Icons.healing,
+                      label: MingaLocalizations.of(context).health,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.healthcare),
+                    ),
+                    _CategoryCard(
+                      color: primary100,
+                      icon: Icons.school,
+                      label: MingaLocalizations.of(context).teach,
+                      onSelected: () =>
+                          widget.onSelected(VoluntaryWorkType.teaching),
                     ),
                   ],
                 ),
               ),
-            ),
-          ]),
+              SliverList(
+                delegate: SliverChildListDelegate([
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Form(
+                            key: _formKey,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8, right: 16, left: 16),
+                              child: FormFieldSpacing(
+                                divided: false,
+                                child: TextFormField(
+                                  controller: _typeController,
+                                  validator: (val) => val!.length > 5
+                                      ? null
+                                      : MingaLocalizations.of(context)
+                                          .at_least_5,
+                                ),
+                                title: MingaLocalizations.of(context).alt_cat,
+                              ),
+                            ),
+                          ),
+                          Divider(
+                            thickness: 1.5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8, bottom: 8),
+                            child: ButtonBar(
+                              children: [
+                                RaisedButton.icon(
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      widget.onSelected(_typeController.text);
+                                    }
+                                  },
+                                  icon: Icon(Icons.arrow_forward),
+                                  label: Text(
+                                      MingaLocalizations.of(context).proceed),
+                                  elevation: 0,
+                                  highlightElevation: 0,
+                                  disabledElevation: 0,
+                                )
+                              ],
+                              buttonHeight: 48,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 }

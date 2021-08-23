@@ -74,7 +74,7 @@ class _AssignCenterScreen extends StatefulWidget {
 }
 
 class _AssignCenterScreenState extends State<_AssignCenterScreen> {
-  late Timer _timer;
+  Timer? _timer;
   bool _loading = true;
   double _opacity = 0;
 
@@ -200,166 +200,157 @@ class _FormState extends State<_Form> {
 
   String? _unit = units.first;
   @override
-  Widget build(BuildContext context) => BlocBuilder<ProductBloc, ProductState>(
-          builder: (BuildContext context, ProductState state) {
-        if (state is ProductSnapshotState) {
-          return _buildForm(context, state);
-        } else {
-          return CircularProgressIndicator();
-        }
-      });
-
-  Widget _buildForm(BuildContext context, ProductSnapshotState state) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Form(
-        child: Column(
-          children: [
-            SelectionTile(
-              value: false,
-              onChanged: (val) {},
-              leftLabel: MingaLocalizations.of(context).food,
-              rightLabel: MingaLocalizations.of(context).non_food,
-            ),
-            FormFieldSpacing(
-              divided: false,
-              child: ListTile(
-                leading: Icon(
-                  Icons.add_a_photo,
-                  size: 32,
-                ),
-                title: Text(MingaLocalizations.of(context).select_image),
-                subtitle: Text(MingaLocalizations.of(context).select_image_sub),
-                onTap: () {},
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(16),
+        child: Form(
+          child: Column(
+            children: [
+              SelectionTile(
+                value: false,
+                onChanged: (val) {},
+                leftLabel: MingaLocalizations.of(context).food,
+                rightLabel: MingaLocalizations.of(context).non_food,
               ),
-            ),
-            FormFieldSpacing(
-              title: MingaLocalizations.of(context).choose_type,
-              divided: false,
-              child: AutoCompleteTextField<ProductCategory>(
-                clearOnSubmit: false,
-                controller: _labelEditingController,
-                key: _autoCompleteKey,
-                itemFilter: (ProductCategory suggestion, input) => suggestion
-                    .label
-                    .toLowerCase()
-                    .startsWith(input.toLowerCase()),
-                itemSorter: (ProductCategory a, ProductCategory b) =>
-                    a.label.compareTo(b.label),
-                itemSubmitted: (ProductCategory item) {
-                  _labelEditingController.value = TextEditingValue(
-                    text: item.label,
-                  );
-                },
-                itemBuilder: (context, item) => ListTile(
-                  dense: true,
-                  contentPadding:
-                      EdgeInsets.only(left: 16, right: 16, top: 6, bottom: 6),
-                  title: Text(item.label),
-                  trailing: Chip(
-                    backgroundColor: primary100,
-                    label: Text('~ ${item.points}P / ${_printQuantity(item)}'),
+              FormFieldSpacing(
+                divided: false,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.add_a_photo,
+                    size: 32,
                   ),
+                  title: Text(MingaLocalizations.of(context).select_image),
+                  subtitle:
+                      Text(MingaLocalizations.of(context).select_image_sub),
+                  onTap: () {},
                 ),
-                suggestions: state.products,
-                style: Theme.of(context).textTheme.headline5,
-                decoration: InputDecoration(
-                    hintText: MingaLocalizations.of(context).label),
               ),
-            ),
-            FormFieldSpacing(
-              divided: false,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Flexible(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.only(left: 6, right: 6, bottom: 8, top: 4),
-                      child: Column(
-                        children: [
-                          Text('Quantity',
-                              style: Theme.of(context).textTheme.caption),
-                          TextFormField(
-                            validator: (val) {
-                              if (val?.isEmpty != null) {
-                                return MingaLocalizations.of(context).fill_in;
-                              } else if (int.tryParse(val ?? '') == null) {
-                                return 'not a number';
-                              }
-                              return null;
-                            },
-                            textAlign: TextAlign.center,
-                            keyboardType: TextInputType.numberWithOptions(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    flex: 1,
-                  ),
-                  Container(
-                    width: 1.5,
-                    height: 60,
-                    color: Colors.black,
-                    margin: EdgeInsets.only(bottom: 4),
-                  ),
-                  Flexible(
-                    flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 6.0, right: 6.0, top: 4, bottom: 8),
-                      child: Column(
-                        children: [
-                          Text('Unit',
-                              style: Theme.of(context).textTheme.caption),
-                          DropdownButton<String>(
-                            value: _unit,
-                            items: [
-                              ...units
-                                  .map((unit) => DropdownMenuItem(
-                                        child: Text(unit),
-                                        value: unit,
-                                        onTap: () {},
-                                      ))
-                                  .toList()
-                            ],
-                            onChanged: (value) {
-                              setState(() {
-                                _unit = value;
-                              });
-                            },
-                          ),
-                        ],
-                      ),
+              FormFieldSpacing(
+                title: MingaLocalizations.of(context).choose_type,
+                divided: false,
+                child: AutoCompleteTextField<ProductCategory>(
+                  clearOnSubmit: false,
+                  controller: _labelEditingController,
+                  key: _autoCompleteKey,
+                  itemFilter: (ProductCategory suggestion, input) => suggestion
+                      .label
+                      .toLowerCase()
+                      .startsWith(input.toLowerCase()),
+                  itemSorter: (ProductCategory a, ProductCategory b) =>
+                      a.label.compareTo(b.label),
+                  itemSubmitted: (ProductCategory item) {
+                    _labelEditingController.value = TextEditingValue(
+                      text: item.label,
+                    );
+                  },
+                  itemBuilder: (context, item) => ListTile(
+                    dense: true,
+                    contentPadding:
+                        EdgeInsets.only(left: 16, right: 16, top: 6, bottom: 6),
+                    title: Text(item.label),
+                    trailing: Chip(
+                      backgroundColor: primary100,
+                      label:
+                          Text('~ ${item.points}P / ${_printQuantity(item)}'),
                     ),
                   ),
-                ],
+                  suggestions: [],
+                  style: Theme.of(context).textTheme.headline5,
+                  decoration: InputDecoration(
+                      hintText: MingaLocalizations.of(context).label),
+                ),
               ),
-            ),
-            LocationSelector(
-              onSelect: (result) {},
-            ),
-          ],
+              FormFieldSpacing(
+                divided: false,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Flexible(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 6, right: 6, bottom: 8, top: 4),
+                        child: Column(
+                          children: [
+                            Text('Quantity',
+                                style: Theme.of(context).textTheme.caption),
+                            TextFormField(
+                              validator: (val) {
+                                if (val?.isEmpty != null) {
+                                  return MingaLocalizations.of(context).fill_in;
+                                } else if (int.tryParse(val ?? '') == null) {
+                                  return 'not a number';
+                                }
+                                return null;
+                              },
+                              textAlign: TextAlign.center,
+                              keyboardType: TextInputType.numberWithOptions(),
+                            ),
+                          ],
+                        ),
+                      ),
+                      flex: 1,
+                    ),
+                    Container(
+                      width: 1.5,
+                      height: 60,
+                      color: Colors.black,
+                      margin: EdgeInsets.only(bottom: 4),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 6.0, right: 6.0, top: 4, bottom: 8),
+                        child: Column(
+                          children: [
+                            Text('Unit',
+                                style: Theme.of(context).textTheme.caption),
+                            DropdownButton<String>(
+                              value: _unit,
+                              items: [
+                                ...units
+                                    .map((unit) => DropdownMenuItem(
+                                          child: Text(unit),
+                                          value: unit,
+                                          onTap: () {},
+                                        ))
+                                    .toList()
+                              ],
+                              onChanged: (value) {
+                                setState(() {
+                                  _unit = value;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              LocationSelector(
+                onSelect: (result) {},
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
+}
 
-  // TODO localize donations
-  _printQuantity(ProductCategory item) {
-    var _unitsSingular = {
-      'pieces': 'pc.',
-      'kg': 'kg',
-      'grams': 'gr',
-    };
-    var _units = {
-      'pieces': 'pcs.',
-      'kg': 'kg',
-      'grams': 'grs',
-    };
-    print(units);
-    return (item.quantity.toInt() == 1)
-        ? '1${_unitsSingular[item.unit] ?? item.unit}'
-        : '${item.quantity}${_units[item.unit] ?? item.unit}';
-  }
+// TODO localize donations
+_printQuantity(ProductCategory item) {
+  var _unitsSingular = {
+    'pieces': 'pc.',
+    'kg': 'kg',
+    'grams': 'gr',
+  };
+  var _units = {
+    'pieces': 'pcs.',
+    'kg': 'kg',
+    'grams': 'grs',
+  };
+  print(units);
+  return (item.quantity.toInt() == 1)
+      ? '1${_unitsSingular[item.unit] ?? item.unit}'
+      : '${item.quantity}${_units[item.unit] ?? item.unit}';
 }

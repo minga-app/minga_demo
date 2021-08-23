@@ -15,6 +15,7 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.9,
+      constraints: BoxConstraints(minWidth: 300, maxWidth: 570),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -60,36 +61,15 @@ class MenuScreen extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              Flexible(
-                fit: FlexFit.loose,
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: Row(
-                    children: [
-                      MenuCard.small(
-                        backgroundColor: primary100,
-                        title: MingaLocalizations.of(context).admin,
-                        subtitle: MingaLocalizations.of(context).admin_sub,
-                        icon: Icons.store,
-                        callback: () {
-                          nav.center();
-                          Navigator.pop(context);
-                        },
-                      ),
-                      MenuCard.small(
-                        backgroundColor: primary100,
-                        title: MingaLocalizations.of(context).moderate,
-                        subtitle: MingaLocalizations.of(context).moderate_sub,
-                        icon: Icons.gavel,
-                        callback: () {
-                          nav.moderator();
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+              MenuCard(
+                backgroundColor: primary100,
+                title: MingaLocalizations.of(context).admin,
+                subtitle: MingaLocalizations.of(context).admin_sub,
+                icon: Icons.store,
+                callback: () {
+                  nav.center();
+                  Navigator.pop(context);
+                },
               ),
               Divider(),
               LogoutTile(),
@@ -170,7 +150,7 @@ class MenuCard extends StatelessWidget {
                         color: textColor ?? Colors.black,
                       ),
                 title: Text(
-                  title ?? '',
+                  title,
                   style: TextStyle(
                     color: textColor ?? Colors.black,
                     fontWeight: FontWeight.w500,
@@ -180,7 +160,7 @@ class MenuCard extends StatelessWidget {
                 subtitle: Padding(
                   padding: EdgeInsets.only(top: 8),
                   child: Text(
-                    subtitle ?? '',
+                    subtitle,
                     style: TextStyle(
                         color: textColor ?? Colors.black,
                         fontSize: small ? 13 : 15),

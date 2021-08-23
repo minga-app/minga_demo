@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minga_demo/theme.dart';
 import 'package:minga_demo/widgets/app_bar.dart';
+import 'package:minga_demo/widgets/responsive_body.dart';
 
 class ChatScreen extends StatelessWidget {
   static String route = '/chat';
@@ -9,41 +10,42 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PageAppBar(context, 'Community'),
-      body: SafeArea(
-          child: SingleChildScrollView(
-        reverse: true,
-        child: Column(
-          children: [
-            ChatItem(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              leading: true,
-              left: true,
-              shortLabel: 'LH',
-              color: Colors.green[800],
-            ),
-            ChatItem(
-              'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-              leading: true,
-              left: false,
-              shortLabel: 'AK',
-              color: Colors.blue[800],
-            ),
-            ChatItem(
-              'Excepteur sint occaecat cupidatat',
-              leading: true,
-              left: true,
-              shortLabel: 'LH',
-              color: Colors.green[800],
-            ),
-            ChatItem(
-              'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-              left: true,
-              shortLabel: 'LH',
-              color: Colors.green[800],
-            ),
-          ],
-        ),
-      )),
+      body: SingleColumnBody(scrollView: false, children: [
+        SingleChildScrollView(
+          reverse: true,
+          child: Column(
+            children: [
+              ChatItem(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                leading: true,
+                left: true,
+                shortLabel: 'LH',
+                color: Colors.green[800],
+              ),
+              ChatItem(
+                'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                leading: true,
+                left: false,
+                shortLabel: 'AK',
+                color: Colors.blue[800],
+              ),
+              ChatItem(
+                'Excepteur sint occaecat cupidatat',
+                leading: true,
+                left: true,
+                shortLabel: 'LH',
+                color: Colors.green[800],
+              ),
+              ChatItem(
+                'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                left: true,
+                shortLabel: 'LH',
+                color: Colors.green[800],
+              ),
+            ],
+          ),
+        )
+      ]),
     );
   }
 }
@@ -84,7 +86,7 @@ class ChatItem extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                text ?? 'Empty',
+                text,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 50,
                 style: TextStyle(fontSize: 15),
@@ -114,7 +116,7 @@ class ChatItem extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  shortLabel ?? 'VN',
+                  shortLabel,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 17,
@@ -134,7 +136,7 @@ class ChatItem extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  shortLabel ?? 'VN',
+                  shortLabel,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 17,

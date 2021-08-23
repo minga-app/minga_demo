@@ -37,7 +37,7 @@ class _SaveButtonState extends State<SaveButton> {
         ),
       );
     }
-    return widget.icon ?? Icon(Icons.done);
+    return widget.icon;
   }
 
   @override
@@ -54,7 +54,7 @@ class _SaveButtonState extends State<SaveButton> {
                 _saving = false;
               });
             },
-      label: widget.label ?? Text(MingaLocalizations.of(context).save),
+      label: widget.label,
       icon: _buildIcon(),
       elevation: 0,
       disabledElevation: 0,

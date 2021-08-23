@@ -65,7 +65,8 @@ class MingaLocalizations {
   }
 
   static MingaLocalizations of(BuildContext context) {
-    return Localizations.of<MingaLocalizations>(context, MingaLocalizations);
+    return Localizations.of<MingaLocalizations>(context, MingaLocalizations) ??
+        MingaLocalizations('es');
   }
 
   final String localeName;
@@ -423,7 +424,7 @@ class MingaApp extends StatelessWidget {
           title: 'Minga App',
           theme: _buildTheme(),
           routes: {
-            '/home': (_) => HomeScreen(),
+            '/': (_) => HomeScreen(),
           },
           initialRoute: '/',
           debugShowCheckedModeBanner: false,
@@ -440,8 +441,6 @@ class MingaApp extends StatelessWidget {
             const Locale('en', ''),
             const Locale('es', ''),
           ],
-
-          // ...
         ),
       );
 }

@@ -45,7 +45,6 @@ class _CenterScreenState extends State<CenterScreen> {
               ],
             ),
             Container(),
-            Container(),
             SettingsView(),
           ],
           navItems: [
@@ -54,20 +53,15 @@ class _CenterScreenState extends State<CenterScreen> {
                 value: 0,
                 icon: Icon(Icons.directions_bike)),
             NavbarItem(
-                label: MingaLocalizations.of(context).a_inventory,
-                value: 1,
-                icon: Icon(Icons.storage)),
-            NavbarItem(
                 label: MingaLocalizations.of(context).a_helpers,
-                value: 2,
+                value: 1,
                 icon: Icon(Icons.emoji_people)),
             NavbarItem(
                 label: MingaLocalizations.of(context).a_settings,
-                value: 3,
+                value: 2,
                 icon: Icon(Icons.settings)),
           ],
           fabItems: [
-            null,
             null,
             FloatingActionButton.extended(
               onPressed: () {

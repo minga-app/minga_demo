@@ -23,10 +23,6 @@ class DonorScreen extends StatelessWidget {
                   children: [
                     Text(MingaLocalizations.of(context).donate_food,
                         style: Theme.of(context).textTheme.headline5),
-                    Text(
-                      MingaLocalizations.of(context).donate_food_sub,
-                      textAlign: TextAlign.center,
-                    ),
                   ],
                 ),
               ),
@@ -37,13 +33,7 @@ class DonorScreen extends StatelessWidget {
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => BlocProvider<ProductBloc>(
-                    create: (_) => BlocProvider.of<ProductBloc>(context),
-                    child: DonationForm()),
-              ),
-            );
+                context, MaterialPageRoute(builder: (_) => DonationForm()));
           },
           label: Text('Donate'),
           icon: Icon(Icons.add),

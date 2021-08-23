@@ -17,33 +17,8 @@ class _OffersScreenState extends State<OffersScreen> {
     return Scaffold(
       appBar: DefaultAppBar(context, icon: Icons.restaurant, title: 'Benefit'),
       extendBodyBehindAppBar: true,
-      body: PageBodyWithNav(
-        navItems: [
-          NavbarItem(
-            label: 'offers',
-            value: 0,
-            icon: Icon(Icons.shopping_basket),
-          ),
-          NavbarItem(
-            label: 'centers',
-            value: 2,
-            icon: Icon(Icons.location_searching),
-          ),
-        ],
-        items: [
-          _Offers(),
-          _CentersMap(),
-        ],
-        fabItems: [null, null],
-      ),
+      body: SafeArea(top: true, bottom: false, child: _Offers()),
     );
-  }
-}
-
-class _CentersMap extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 
@@ -93,25 +68,25 @@ class _Offers extends StatelessWidget {
           child: ListView(
             children: [
               OfferTile(
-                image: 'https://pngimg.com/uploads/pasta/pasta_PNG91.png',
+                image: 'assets/pasta.png',
                 location: 'Santiago East',
                 points: 7,
                 title: 'Spaghetti',
               ),
               OfferTile(
-                image: 'https://pngimg.com/uploads/bread/bread_PNG2318.png',
+                image: 'assets/bread.png',
                 location: 'Santiago West',
                 points: 6,
                 title: 'Bread, whole grain',
               ),
               OfferTile(
-                image: 'https://pngimg.com/uploads/apple/apple_PNG12503.png',
+                image: 'assets/apple.png',
                 location: 'Santiago West',
                 points: 3,
                 title: 'Apples',
               ),
               OfferTile(
-                image: 'https://pngimg.com/uploads/soup/soup_PNG105.png',
+                image: 'assets/soup.png',
                 location: 'Santiago East',
                 points: 5,
                 title: 'Vegetable stew',
@@ -119,8 +94,7 @@ class _Offers extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 72),
                 child: OfferTile(
-                  image:
-                      'https://pngimg.com/uploads/medical_mask/medical_mask_PNG43.png',
+                  image: 'assets/medical-mask.png',
                   location: 'Santiago West',
                   points: 23,
                   title: '50 masks',

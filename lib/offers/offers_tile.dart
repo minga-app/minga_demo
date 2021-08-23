@@ -18,7 +18,7 @@ class OfferTile extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            leading: Image.network(
+            leading: Image.asset(
               image,
               height: 100,
               fit: BoxFit.contain,

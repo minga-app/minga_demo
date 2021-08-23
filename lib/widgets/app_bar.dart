@@ -55,7 +55,7 @@ class DefaultAppBar extends AppBar {
                       margin: EdgeInsets.only(left: 16),
                       padding: EdgeInsets.only(
                           left: 12, right: 12, top: 4, bottom: 4),
-                      child: Text(title ?? '',
+                      child: Text(title,
                           style: Theme.of(context).textTheme.headline5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
@@ -106,8 +106,11 @@ class DefaultAppBar extends AppBar {
                       isScrollControlled: true,
                       context: context,
                       backgroundColor: Colors.transparent,
-                      builder: (_) => MenuScreen(
-                          nav: BlocProvider.of<NavigationCubit>(context)),
+                      builder: (_) => Align(
+                        alignment: Alignment.bottomCenter,
+                        child: MenuScreen(
+                            nav: BlocProvider.of<NavigationCubit>(context)),
+                      ),
                     );
                   }),
             ),
