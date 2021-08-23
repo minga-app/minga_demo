@@ -1,0 +1,665 @@
+{
+    "@@locale": "de",
+    "@@last_modified": "2021-08-23T15:23:25.490854",
+    "@@context": "app",
+    "food_climate": "Lebensmittel & das Klima",
+    "@food_climate": {
+        "type": "text"
+    },
+    "email": "E-Mail",
+    "@email": {
+        "type": "text"
+    },
+    "phone": "Telefon",
+    "@phone": {
+        "type": "text"
+    },
+    "password": "Kennwort",
+    "@password": {
+        "type": "text"
+    },
+    "sign_in": "Anmelden",
+    "@sign_in": {
+        "type": "text"
+    },
+    "new_here": "Neu hier?",
+    "@new_here": {
+        "type": "text"
+    },
+    "learn_more": "Mehr erfahren und anmelden",
+    "@learn_more": {
+        "type": "text"
+    },
+    "welcome": "Willkommen bei Minga",
+    "@welcome": {
+        "type": "text"
+    },
+    "create_account": "Konto erstellen, um...",
+    "@create_account": {
+        "type": "text"
+    },
+    "help": "Helfen",
+    "@help": {
+        "type": "text"
+    },
+    "benefit": "Nutzen",
+    "@benefit": {
+        "type": "text"
+    },
+    "donate": "Spenden",
+    "@donate": {
+        "type": "text"
+    },
+    "your_email": "E-Mail Adresse",
+    "@your_email": {
+        "type": "text"
+    },
+    "min_chars": "min. Zeichen",
+    "@min_chars": {
+        "type": "text"
+    },
+    "non_alpha_numeric": "Sonderzeichen verwenden",
+    "@non_alpha_numeric": {
+        "type": "text"
+    },
+    "terms": "Nutzungsbedingungen akzeptieren",
+    "@terms": {
+        "type": "text"
+    },
+    "privacy": "Datenschutzrichtlinien akzeptieren",
+    "@privacy": {
+        "type": "text"
+    },
+    "register": "Registrieren",
+    "@register": {
+        "type": "text"
+    },
+    "your_phone": "Deine Telefonnummer",
+    "@your_phone": {
+        "type": "text"
+    },
+    "phone_disclaimer": "Bitte den Empfang von Textnachrichten auf  dieser Telefonnummer aktivieren, um Authentifizierungscodes  zu erhalten.",
+    "@phone_disclaimer": {
+        "type": "text"
+    },
+    "phone_note": "Du wirst eine Bestätigungs-SMS erhalten.",
+    "@phone_note": {
+        "type": "text"
+    },
+    "your_name": "Dein Name",
+    "@your_name": {
+        "type": "text"
+    },
+    "show_email": "E-Mail-Adresse anzeigen",
+    "@show_email": {
+        "type": "text"
+    },
+    "show_emai_sub": "Andere Benutzer können die mit deinem Profil verknüpfte E-Mail sehen.",
+    "@show_emai_sub": {
+        "type": "text"
+    },
+    "show_phone": "Telefonnummer anzeigen",
+    "@show_phone": {
+        "type": "text"
+    },
+    "show_phone_sub": "Andere Benutzer können die mit deinem Profil verknüpfte Telefonnummer sehen.",
+    "@show_phone_sub": {
+        "type": "text"
+    },
+    "anon_donations": "Anonymisieren meiner Spenden",
+    "@anon_donations": {
+        "type": "text"
+    },
+    "anon_donations_sub": "Wenn du spendest, kann der Empfänger dein Profil nicht sehen.",
+    "@anon_donations_sub": {
+        "type": "text"
+    },
+    "anon_chats": "Meine Chats anonymisieren",
+    "@anon_chats": {
+        "type": "text"
+    },
+    "anon_chats_sub": "Deine Identität beim Chatten im allgemeinen Chat verstecken. Dies hat keinen Einfluss auf die Chats, die mit Spenden oder ehrenamtlicher Arbeit verbunden sind.",
+    "@anon_chats_sub": {
+        "type": "text"
+    },
+    "show_impact": "Meinen Impact ausrechnen",
+    "@show_impact": {
+        "type": "text"
+    },
+    "show _impact_sub": "Andere Benutzer können den Impact sehen, der mit deinem Profil verbunden ist.",
+    "@show _impact_sub": {
+        "type": "text"
+    },
+    "residence": "Dein Wohnort",
+    "@residence": {
+        "type": "text"
+    },
+    "location": "Wohnort auswählen",
+    "@location": {
+        "type": "text"
+    },
+    "save_profile": "Profil speichern",
+    "@save_profile": {
+        "type": "text"
+    },
+    "benefit_sub": "Angebote in der Nähe entdecken",
+    "@benefit_sub": {
+        "type": "text"
+    },
+    "help_sub": "Abholung, Verarbeitung und Verteilung von Lebensmitteln und Waren",
+    "@help_sub": {
+        "type": "text"
+    },
+    "donate_sub": "Lebensmittel oder andere Waren spenden",
+    "@donate_sub": {
+        "type": "text"
+    },
+    "admin": "Verwaltung",
+    "@admin": {
+        "type": "text"
+    },
+    "admin_sub": "Verteilzentren verwalten",
+    "@admin_sub": {
+        "type": "text"
+    },
+    "moderate": "Nur für Minga-Mitarbeiter",
+    "@moderate": {
+        "type": "text"
+    },
+    "logged_in": "Eingeloggt",
+    "@logged_in": {
+        "type": "text"
+    },
+    "log_out": "Abmelden",
+    "@log_out": {
+        "type": "text"
+    },
+    "manage_account": "Konto verwalten",
+    "@manage_account": {
+        "type": "text"
+    },
+    "manage_account_sub": "Profil bearbeiten, Daten exportieren",
+    "@manage_account_sub": {
+        "type": "text"
+    },
+    "export_data": "Alle Benutzerdaten exportieren",
+    "@export_data": {
+        "type": "text"
+    },
+    "export_data_sub": "Die europäische Datenschutzgrundverordnung (GDPR) verlangt eine Option , so dass der Benutzer seine spezifischen Daten herunterladen kann",
+    "@export_data_sub": {
+        "type": "text"
+    },
+    "delete_account": "Konto löschen",
+    "@delete_account": {
+        "type": "text"
+    },
+    "delete_account_sub": "Dies führt zu permanentem Datenverlust und kann nicht rückgängig gemacht werden",
+    "@delete_account_sub": {
+        "type": "text"
+    },
+    "cancel": "Abbrechen",
+    "@cancel": {
+        "type": "text"
+    },
+    "update": "Aktualisieren",
+    "@update": {
+        "type": "text"
+    },
+    "save": "Speichern",
+    "@save": {
+        "type": "text"
+    },
+    "proceed": "Fortfahren",
+    "@proceed": {
+        "type": "text"
+    },
+    "done": "Erledigt",
+    "@done": {
+        "type": "text"
+    },
+    "account ": "Konto",
+    "@account ": {
+        "type": "text"
+    },
+    "impact": "Impact",
+    "@impact": {
+        "type": "text"
+    },
+    "community": "Gemeinschaft",
+    "@community": {
+        "type": "text"
+    },
+    "menu": "Menü",
+    "@menu": {
+        "type": "text"
+    },
+    "b_food": "Lebensmittel",
+    "@b_food": {
+        "type": "text"
+    },
+    "b_non_food": "Non-Food",
+    "@b_non_food": {
+        "type": "text"
+    },
+    "b_centers": "Zentren",
+    "@b_centers": {
+        "type": "text"
+    },
+    "deliver": "Liefern",
+    "@deliver": {
+        "type": "text"
+    },
+    "piece": "Einheit",
+    "@piece": {
+        "type": "text"
+    },
+    "pieces": "Einheiten",
+    "@pieces": {
+        "type": "text"
+    },
+    "point": "Punkt",
+    "@point": {
+        "type": "text"
+    },
+    "points": "Punkte",
+    "@points": {
+        "type": "text"
+    },
+    "can_be_picked_up": "Kann abgeholt werden nach...",
+    "@can_be_picked_up": {
+        "type": "text"
+    },
+    "picked_up": "Abgeholt",
+    "@picked_up": {
+        "type": "text"
+    },
+    "must_be_delivered": "Muss zugestellt werden innerhalb von...",
+    "@must_be_delivered": {
+        "type": "text"
+    },
+    "hour": "Stunde",
+    "@hour": {
+        "type": "text"
+    },
+    "hours": "Stunden",
+    "@hours": {
+        "type": "text"
+    },
+    "delivered": "Ausgeliefert",
+    "@delivered": {
+        "type": "text"
+    },
+    "of_": "Von",
+    "@of_": {
+        "type": "text"
+    },
+    "h_my_shifts": "Meine_Schichten",
+    "@h_my_shifts": {
+        "type": "text"
+    },
+    "h_apply": "Bewerben",
+    "@h_apply": {
+        "type": "text"
+    },
+    "not_interested": "Nicht interessiert",
+    "@not_interested": {
+        "type": "text"
+    },
+    "apply": "Bewerben",
+    "@apply": {
+        "type": "text"
+    },
+    "donate_food": "Lebensmittel oder Waren spenden",
+    "@donate_food": {
+        "type": "text"
+    },
+    "donate_food_sub": "<KLEINER ERKLÄRTEXT>",
+    "@donate_food_sub": {
+        "type": "text"
+    },
+    "food": "Lebensmittel",
+    "@food": {
+        "type": "text"
+    },
+    "non_food": "Non-Food",
+    "@non_food": {
+        "type": "text"
+    },
+    "select_image": "Wählen Sie ein Bild",
+    "@select_image": {
+        "type": "text"
+    },
+    "select_image_sub": "Wird in der App angezeigt",
+    "@select_image_sub": {
+        "type": "text"
+    },
+    "choose_type": "Typ wählen",
+    "@choose_type": {
+        "type": "text"
+    },
+    "choose_type_sub": "Etikett",
+    "@choose_type_sub": {
+        "type": "text"
+    },
+    "quantity": "Menge",
+    "@quantity": {
+        "type": "text"
+    },
+    "unit": "Einheit",
+    "@unit": {
+        "type": "text"
+    },
+    "select_center": "Nächstgelegenes Verteilzentrum auswählen",
+    "@select_center": {
+        "type": "text"
+    },
+    "self_deliver": "Möchten Sie die Spende selbst ausliefern?",
+    "@self_deliver": {
+        "type": "text"
+    },
+    "today": "Heute",
+    "@today": {
+        "type": "text"
+    },
+    "yesterday": "Gestern",
+    "@yesterday": {
+        "type": "text"
+    },
+    "a_deliveries": "Lieferungen",
+    "@a_deliveries": {
+        "type": "text"
+    },
+    "a_inventory": "Inventar",
+    "@a_inventory": {
+        "type": "text"
+    },
+    "a_helpers": "Helfer",
+    "@a_helpers": {
+        "type": "text"
+    },
+    "a_settings": "Einstellungen",
+    "@a_settings": {
+        "type": "text"
+    },
+    "eta": "Ungefähre Ankunftszeit",
+    "@eta": {
+        "type": "text"
+    },
+    "donated": "Gespendet",
+    "@donated": {
+        "type": "text"
+    },
+    "shift": "Schicht",
+    "@shift": {
+        "type": "text"
+    },
+    "delivery": "Lieferung & Besorgungen",
+    "@delivery": {
+        "type": "text"
+    },
+    "prep_food": "Essen zubereiten",
+    "@prep_food": {
+        "type": "text"
+    },
+    "serve_food": "Essen ausgeben",
+    "@serve_food": {
+        "type": "text"
+    },
+    "cleaning": "Reinigung",
+    "@cleaning": {
+        "type": "text"
+    },
+    "repair": "Reparaturen & Handwerksarbeiten",
+    "@repair": {
+        "type": "text"
+    },
+    "garden": "Gartenarbeit",
+    "@garden": {
+        "type": "text"
+    },
+    "coord": "Koordinieren",
+    "@coord": {
+        "type": "text"
+    },
+    "health": "Gesundheitswesen",
+    "@health": {
+        "type": "text"
+    },
+    "teach": "Unterrichten",
+    "@teach": {
+        "type": "text"
+    },
+    "alt_cat": "Alternative Kategorie",
+    "@alt_cat": {
+        "type": "text"
+    },
+    "at_least_5": "Bitte geben Sie mindestens 5 Zeichen ein...",
+    "@at_least_5": {
+        "type": "text"
+    },
+    "category": "Kategorie",
+    "@category": {
+        "type": "text"
+    },
+    "summary": "Zusammenfassung",
+    "@summary": {
+        "type": "text"
+    },
+    "desc": "Beschreibung",
+    "@desc": {
+        "type": "text"
+    },
+    "impact_points": "Impact-Punkte",
+    "@impact_points": {
+        "type": "text"
+    },
+    "date": "Datum",
+    "@date": {
+        "type": "text"
+    },
+    "invite_user": "Benutzer einladen",
+    "@invite_user": {
+        "type": "text"
+    },
+    "admins": "Admins",
+    "@admins": {
+        "type": "text"
+    },
+    "m_categories": "Kategorien",
+    "@m_categories": {
+        "type": "text"
+    },
+    "m_centers": "Zentren",
+    "@m_centers": {
+        "type": "text"
+    },
+    "m_pickup": "Zur Abholung",
+    "@m_pickup": {
+        "type": "text"
+    },
+    "create_prod_cat": "Eine Produktkategorie erstellen",
+    "@create_prod_cat": {
+        "type": "text"
+    },
+    "product_class": "Produkt-Klassifizierung",
+    "@product_class": {
+        "type": "text"
+    },
+    "super_cat": "Ist dies eine Makrokategorie?",
+    "@super_cat": {
+        "type": "text"
+    },
+    "super_cat_sub": "z. B.: Gemüse, Spielzeug, Sanitärprodukte",
+    "@super_cat_sub": {
+        "type": "text"
+    },
+    "benefit_points": "Impact-Punkte",
+    "@benefit_points": {
+        "type": "text"
+    },
+    "select_super_cat": "Makrokategorie auswählen",
+    "@select_super_cat": {
+        "type": "text"
+    },
+    "none": "<Keine>",
+    "@none": {
+        "type": "text"
+    },
+    "average_peso": "ø Preis in chilenischen Peso",
+    "@average_peso": {
+        "type": "text"
+    },
+    "price": "Preis",
+    "@price": {
+        "type": "text"
+    },
+    "size_templates": "Größen",
+    "@size_templates": {
+        "type": "text"
+    },
+    "small": "Klein",
+    "@small": {
+        "type": "text"
+    },
+    "medium": "Mittel",
+    "@medium": {
+        "type": "text"
+    },
+    "large": "Groß",
+    "@large": {
+        "type": "text"
+    },
+    "conditions": "Eventuelle Produktbedingungen",
+    "@conditions": {
+        "type": "text"
+    },
+    "add_cond": "Bedingung hinzufügen",
+    "@add_cond": {
+        "type": "text"
+    },
+    "max_delay": "Max. Wartezeit für Abholung",
+    "@max_delay": {
+        "type": "text"
+    },
+    "manage_donations": "zur Abholung bereite Spenden ",
+    "@manage_donations": {
+        "type": "text"
+    },
+    "manage_donations_sub": "Verwaltung von Spenden, die ihre maximale Abholfrist überschritten haben und einem  Abholer zugewiesen werden müssen.",
+    "@manage_donations_sub": {
+        "type": "text"
+    },
+    "center": "Zentrum",
+    "@center": {
+        "type": "text"
+    },
+    "manage_centers": "Verteilzentren",
+    "@manage_centers": {
+        "type": "text"
+    },
+    "manage_centers_sub": "Verwaltung von Verteilzentren. Anlegen neuer Zentren.",
+    "@manage_centers_sub": {
+        "type": "text"
+    },
+    "claim": "Reklamation",
+    "@claim": {
+        "type": "text"
+    },
+    "all_cats": "Alle Kategorien",
+    "@all_cats": {
+        "type": "text"
+    },
+    "meals": "Mahlzeiten",
+    "@meals": {
+        "type": "text"
+    },
+    "groceries": "Lebensmittel",
+    "@groceries": {
+        "type": "text"
+    },
+    "sanitary": "Sanitäre Produkte",
+    "@sanitary": {
+        "type": "text"
+    },
+    "send": "Senden",
+    "@send": {
+        "type": "text"
+    },
+    "new_question": "Frage",
+    "@new_question": {
+        "type": "text"
+    },
+    "reply": "Antwort",
+    "@reply": {
+        "type": "text"
+    },
+    "title": "Hallo Welt",
+    "@title": {
+        "type": "text"
+    },
+    "account": "Konto",
+    "@account": {
+        "type": "text"
+    },
+    "info": "Infos",
+    "@info": {
+        "type": "text"
+    },
+    "terms_and_privacy": "Bitte akzeptiere die Datenschutz- und Nutzungsbedingungen!",
+    "@terms_and_privacy": {
+        "type": "text"
+    },
+    "fill_in": "Bitte ausfüllen",
+    "@fill_in": {
+        "type": "text"
+    },
+    "enter_password": "Bitte gebe dein Passwort ein",
+    "@enter_password": {
+        "type": "text"
+    },
+    "verify_code": "Code verifizieren",
+    "@verify_code": {
+        "type": "text"
+    },
+    "enter_code": "Code eingeben",
+    "@enter_code": {
+        "type": "text"
+    },
+    "auth_method": "Deine Konto-Authentifizierungsmethode",
+    "@auth_method": {
+        "type": "text"
+    },
+    "complete_profile": "Vollständiges Profil",
+    "@complete_profile": {
+        "type": "text"
+    },
+    "new_shift": "Neue Schicht",
+    "@new_shift": {
+        "type": "text"
+    },
+    "new_donation": "Neue Spende",
+    "@new_donation": {
+        "type": "text"
+    },
+    "label": "Etikett",
+    "@label": {
+        "type": "text"
+    },
+    "moderate_sub": "Nur für Minga-Mitarbeiter",
+    "@moderate_sub": {
+        "type": "text"
+    },
+    "previous_work": "Bereits geleisteter Beitrag",
+    "@previous_work": {
+        "type": "text"
+    },
+    "served_food": "Serviertes Essen",
+    "@served_food": {
+        "type": "text"
+    },
+    "error": "Fehler",
+    "@error": {
+        "type": "text"
+    }
+}
